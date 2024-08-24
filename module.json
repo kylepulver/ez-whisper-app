@@ -1,7 +1,7 @@
 {
     "id": "ez-whisper-app",
     "title": "EZ Whisper App",
-    "description": "Whisper app.",
+    "description": "Add a simple application for whispers.",
   "authors": [
     {
       "name": "kyle pulver",
@@ -9,7 +9,7 @@
     }
   ],
   "url": "https://github.com/kylepulver/ez-whisper-app",
-  "version": "1",
+  "version": "2",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
