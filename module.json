@@ -1,0 +1,65 @@
+{
+    "id": "ez-whisper-app",
+    "title": "EZ Whisper App",
+    "description": "Whisper app.",
+  "authors": [
+    {
+      "name": "kyle pulver",
+      "url": "https://github.com/kylepulver/ez-whisper-app"
+    }
+  ],
+  "url": "https://github.com/kylepulver/ez-whisper-app",
+  "version": "1",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12.331",
+    "maximum": "12"
+  },
+  "esmodules": [
+    "whisperapp.js"
+  ],
+  "scripts": [
+  ],
+  "styles": [
+    "whisperapp.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "en.json"
+    }
+  ],
+  "packs": [],
+  "relationships": {
+    "systems": [
+    ],
+    "requires": [
+    ],
+    "optional": [],
+    "flags": {
+      "optional": []
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "html",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "styles",
+        "languages"
+      ]
+    }
+  },
+  "socket": false,
+  "manifest": "https://raw.githubusercontent.com/kylepulver/ez-whisper-app/main/module.json",
+  "download": "https://github.com/kylepulver/ez-whisper-app/archive/refs/heads/main.zip",
+  "readme": "https://github.com/kylepulver/ez-whisper-app",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}

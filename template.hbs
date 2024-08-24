@@ -1,0 +1,32 @@
+<form>
+<div>
+
+{{#each recipients}}
+<div class="form-group">
+
+<input type="checkbox" data-dtype="Boolean" name="user-{{this.id}}"/>
+<label>
+
+{{this.name}}
+{{#if this.character.name}}[{{this.character.name}}]{{/if}}
+</label>
+</div>
+{{/each}}
+</div>
+
+<div style="height: 20em">
+<textarea name="message"></textarea>
+</div>
+
+<div class="form-group">
+<button type="submit">
+    <i class="fas fa-comment"></i>
+    Send Message
+</button>
+<button type="close">
+    <i class="fas fa-times"></i>
+    Cancel
+</button>
+</div>
+
+</form>
