@@ -1,8 +1,4 @@
 export class WhisperFormApplication extends FormApplication {
-    constructor() {
-        super();
-    }
-
     static get defaultOptions() {
         const defaults = super.defaultOptions;
 
@@ -19,12 +15,10 @@ export class WhisperFormApplication extends FormApplication {
     }
 
     getData(options) {
-
         const recipients = [];
 
         game.users.forEach(user => {
             if (user.id !== game.user.id) {
-            // if (!user.isGM && !!user.character) {
                 recipients.push(user);
             }
         })
@@ -35,14 +29,7 @@ export class WhisperFormApplication extends FormApplication {
         }
     }
 
-    activateListeners(html) {
-        super.activateListeners(html);
-
-    }
-
     _updateObject(event, formData) {
-
-
         if (!formData.message) {
             ui.notify("No message was entered to whisper.")
             return;
@@ -71,9 +58,4 @@ export class WhisperFormApplication extends FormApplication {
         ui.chat.processMessage(message)
 
     }
-
-    // submit(options) {
-    //     super.submit(options);
-    //     console.log("ioasdhfasd")
-    // }
 }
