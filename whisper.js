@@ -31,8 +31,8 @@ export class WhisperFormApplication extends FormApplication {
 
     _updateObject(event, formData) {
         if (!formData.message) {
-            ui.notifications.notify("No message was entered to whisper.")
-            return;
+            ui.notifications.error("No message was entered to whisper.")
+            throw new Error("No message was entered to whisper.")
         }
 
         const data = foundry.utils.expandObject(formData);
@@ -40,15 +40,15 @@ export class WhisperFormApplication extends FormApplication {
         const recipients = [];
 
         Object.keys(data.user).forEach(id => {
-            if (data.user.id) {
+            if (data.user[id]) {
                 const user = game.users.get(id)
                 recipients.push(user.name)
             }
         })
 
         if (!recipients.length) {
-            ui.notifications.notify("No recipients were chosen for the whisper.")
-            return;
+            ui.notifications.error("No recipients were chosen for the whisper.")
+            throw new Error("No recipients were chosen for the whisper.")
         }
 
         const whisperTo = recipients.join(", ")
