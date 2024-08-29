@@ -40,8 +40,10 @@ export class WhisperFormApplication extends FormApplication {
         const recipients = [];
 
         Object.keys(data.user).forEach(id => {
-            const user = game.users.get(id)
-            recipients.push(user.name)
+            if (data.user.id) {
+                const user = game.users.get(id)
+                recipients.push(user.name)
+            }
         })
 
         if (!recipients.length) {
