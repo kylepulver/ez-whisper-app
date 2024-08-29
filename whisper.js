@@ -35,14 +35,13 @@ export class WhisperFormApplication extends FormApplication {
             return;
         }
 
-        const recipients = [];
-        const userPrefix = 'user-';
+        const data = foundry.utils.expandObject(formData);
 
-        Object.keys(formData).forEach(key => {
-            if (key.startsWith(userPrefix)) {
-                const user = game.users.get(key.substring(userPrefix.length))
-                recipients.push(user.name)
-            }
+        const recipients = [];
+
+        Object.keys(data.user).forEach(id => {
+            const user = game.users.get(id)
+            recipients.push(user.name)
         })
 
         if (!recipients.length) {
@@ -50,12 +49,10 @@ export class WhisperFormApplication extends FormApplication {
             return;
         }
 
+        const whisperTo = recipients.join(", ")
 
-        const whisperTo = recipients.join(" ")
-
-        const message = `/w ${whisperTo} ${formData.message}`
+        const message = `/w [${whisperTo}] ${formData.message}`
 
         ui.chat.processMessage(message)
-
     }
 }
