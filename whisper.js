@@ -31,7 +31,7 @@ export class WhisperFormApplication extends FormApplication {
 
     _updateObject(event, formData) {
         if (!formData.message) {
-            ui.notify("No message was entered to whisper.")
+            ui.notifications.notify("No message was entered to whisper.")
             return;
         }
 
@@ -47,7 +47,7 @@ export class WhisperFormApplication extends FormApplication {
         })
 
         if (!recipients.length) {
-            ui.notify("No recipients were chosen for the whisper.")
+            ui.notifications.notify("No recipients were chosen for the whisper.")
             return;
         }
 
